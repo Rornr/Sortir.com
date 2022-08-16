@@ -3,15 +3,19 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <h1>S'enregistrer</h1>
 
     {{ form_start(registrationForm) }}
+    <br><br>
         {{ form_row(registrationForm.username) }}
+    <br><br>
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
+    <br><br>
         {{ form_row(registrationForm.agreeTerms) }}
+    <br><br>
 
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="btn">S'enregistrer</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
