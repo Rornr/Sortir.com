@@ -4,18 +4,49 @@
 
 {% block body %}
 
-    <h1>Mon profil</h1>
-
-    {{ form(profilForm) }}
-    <br><br>
     <div>
-    <button class="btn btn-lg btn-primary" type="submit">
-        Enregistrer
-    </button>
+        <h1>Mon profil</h1>
 
-    <button class="btn btn-lg btn-primary" type="reset">
-        Annuler
-    </button>
+        {{ form_start(profilForm) }}
+        <div class="profil">
+            Identifiant : <br> {{ form(profilForm.username) }}
+        </div>
+        <br>
+        <div class="profil">
+            Prénom : {{ form(profilForm.prenom) }}
+        </div>
+        <br>
+        <div class="profil">
+            Nom : {{ form(profilForm.nom) }}
+        </div>
+        <br>
+        <div class="profil">
+           Téléphone : {{ form(profilForm.telephone) }}
+        </div>
+        <br>
+        <div class="profil">
+            Email : {{ form(profilForm.email) }}
+        </div>
+        <br>
+        <div class="profil">
+            Mot de passe : {{ form(profilForm.password) }}
+        </div>
+        <br>
+        <div class="profil">
+            Nom du campus : {{ form(profilForm.campus) }}
+        </div>
+        <br>
+        <div class="profil">
+           Photo : {{ form(profilForm.photo) }}
+        </div>
+        <br><br>
+        <button class="btn btn-lg btn-primary" type="submit">
+            Enregistrer
+        </button>
+        <button class="btn btn-lg btn-primary" type="reset">
+            Annuler
+        </button>
+        {{ form_end(profilForm) }}
     </div>
 
 {% endblock %}
