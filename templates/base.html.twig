@@ -15,11 +15,18 @@
         {% endblock %}
     </head>
     <body>
+    <header>
+        <div>
+            <a href="{{ path('app_login') }}">Acceuil</a>
+            <a href="{{ path('app_profil') }}">Mon profil</a>
+            <a href="{{ path('app_logout') }}">Se déconnecter</a>
+
+
+        </div>
+
+    </header>
 
         {% block body %}
-
-
-
 
         {% endblock %}
     </body>
