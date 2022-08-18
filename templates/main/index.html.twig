@@ -12,14 +12,14 @@
         Campus : <select id="idCampus">
     </form>
 </div>
-    <br><br>
+    <br>
     <form>
         <div>
             <label for="site-search">Le nom de la sortie contient:</label>
             <input type="search" id="site-search" name="q">
         </div>
     </form>
-    <br><br>
+    <br>
         <form >
         <label>
             Entre: <input type="date" name="day">
@@ -30,7 +30,6 @@
     <div>
         <fieldset>
             <legend>sorties</legend>
-
             <div>
                 <input type="checkbox" id="organisateur" name="organisateur"  checked>
                 <label for="organisateur"> Sorties dont je suis l'organisateur/trice</label>
@@ -49,7 +48,31 @@
             </div>
         </fieldset>
     </div>
+    <div id="sortie">
+        <div class="colone1"><h4>Nom de la sortie Sortie</h4> </div>
+        <div class="colone2"><h4>Date de la sortie</h4> </div>
+        <div class="colone3"><h4>Clôture </h4> </div>
+        <div class="colone4"><h4>Inscription </h4> </div>
+        <div class="colone5"><h4>places</h4> </div>
+        <div class="colone6"><h4>Etat</h4> </div>
+        <div class="colone7"><h4>Inscrit</h4> </div>
+        <div class="colone8"><h4>Organisateur</h4> </div>
+        <div class="colone9"><h4>Action</h4> </div>
+        <div class="colone10"></div>
+    {% for sortie in sorties %}
+        <div class="colone1">{{ sortie.place }}</div>
+        <div class="colone2">{{ sortie.etats }}</div>
+        <div class="colone3">{{ sortie.inscrit }}</div>
+        <div class="colone4">{{ sortie.organisateur }}</div>
+        <div class="colone5">{{ sortie.actions }}</div>
+        <div class="colone6">{{ sortie.actions }}</div>
+        <div class="colone7"></div>
+        <div class="colone8"></div>
+        <div class="colone9"></div>
+        <div class="colone10"></div>
 
+    {% endfor %}
+    </div>
     <form action="{{ path('app_creer_sortie') }}">
         <button type="submit">Créer une sortie</button>
     </form>

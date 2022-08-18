@@ -18,21 +18,34 @@
     </style>
 
 
-    <div>
+
         <h1>Créer une sortie</h1>
-
+    <div>
         {{ form_start(sortieForm) }}
-        {{ form_row(sortieForm.nomDeLaSortie) }}
-        {{ form_row(sortieForm.dateLaSortie) }}
-        {{ form_row(sortieForm.dateLimiteInscription) }}
-        {{ form_row(sortieForm.place)}}
-        {{ form_row(sortieForm.duree) }}
-        {{ form_row(sortieForm.descriptionEtInfos) }}
-        {{ form_row(sortieForm.campus) }}
-        {{ form_row(sortieForm.ville) }}
-        {{ form_row(sortieForm.lieu) }}
-        {{ form_row(sortieForm.rue) }}
-
+        <br>
+            <div>
+        Sortie : {{ form_widget(sortieForm.nomDeLaSortie) }}
+            <div>
+        Date de la sortie : {{ form_widget(sortieForm.dateLaSortie) }}
+        Date limite d'inscription : {{ form_widget(sortieForm.dateLimiteInscription) }}
+            </div>
+                <br>
+            </div>
+        <br>
+        Nombre de places{{ form_widget(sortieForm.place)}}
+        Durée : {{ form_widget(sortieForm.duree) }}
+        Description et Infos : {{ form_widget(sortieForm.descriptionEtInfos) }}
+            </div>
+        <br>
+            <div>
+        Campus : {{ form_widget(sortieForm.campus) }}
+        Ville : {{ form_widget(sortieForm.ville) }}
+        lieu  : {{ form_widget(sortieForm.lieu) }}
+        Rue : {{ form_widget(sortieForm.rue) }}
+            </div>
+    </div>
+    <br>
+    <br>
 
         <input type="hidden" name="token" value="{{ csrf_token('form') }}"/>
 

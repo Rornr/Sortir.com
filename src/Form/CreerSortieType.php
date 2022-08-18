@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\TabFiltre;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +15,7 @@ class CreerSortieType extends AbstractType
     {
         $builder
             ->add('nomDeLaSortie')
-            ->add('dateLaSortie')
+            ->add('dateLaSortie', DateType::class )
             ->add('cloture')
             ->add('inscrits')
             ->add('place')
@@ -21,9 +23,9 @@ class CreerSortieType extends AbstractType
             ->add('inscrit')
             ->add('organisateur')
             ->add('actions')
-            ->add('dateLimiteInscription')
+            ->add('dateLimiteInscription', DateType::class)
             ->add('duree')
-            ->add('descriptionEtInfos')
+            ->add('descriptionEtInfos',TextareaType::class)
             ->add('campus')
             ->add('ville')
             ->add('lieu')
