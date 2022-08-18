@@ -303,4 +303,12 @@ class TabFiltre
 
         return $this;
     }
+
+    public function setIsPublished(bool $true)
+    {
+    }
+
+    public function setDateCreation(\DateTime $param)
+    {
+    }
 }

@@ -12,8 +12,8 @@ class CreerSortieType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Nom_de_la_sortie')
-            ->add('Date_la_sortie')
+            ->add('nomDeLaSortie')
+            ->add('dateLaSortie')
             ->add('cloture')
             ->add('inscrits')
             ->add('place')
@@ -21,14 +21,14 @@ class CreerSortieType extends AbstractType
             ->add('inscrit')
             ->add('organisateur')
             ->add('actions')
-            ->add('date_limite_inscription')
+            ->add('dateLimiteInscription')
             ->add('duree')
-            ->add('description_et_infos')
+            ->add('descriptionEtInfos')
             ->add('campus')
             ->add('ville')
             ->add('lieu')
             ->add('rue')
-            ->add('code_postal')
+            ->add('codePostal')
             ->add('latitude')
             ->add('longitude')
         ;
