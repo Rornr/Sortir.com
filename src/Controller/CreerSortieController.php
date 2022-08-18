@@ -27,7 +27,7 @@ dump($sortieForm);
             $entityManager->persist($sortie);
             $entityManager->flush();
             $this->addFlash('success', 'Les données ont bien été ajoutées');
-            return $this->redirectToRoute('app_login', ['login' => $sortie->getId()]);
+            return $this->redirectToRoute('app_main');
         }
 
         return $this->render('Sortie/sortie.html.twig', [
