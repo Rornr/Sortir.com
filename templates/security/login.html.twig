@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
     {% block stylesheet %}
-        <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+
     {% endblock %}
 
 {% block title %}Connecte-toi!{% endblock %}
 
 {% block body %}
-    <div id="menuConnexion">
+    <div class="menuConnexion">
         <form class="form" method="post">
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -19,16 +19,33 @@
                 </div>
             {% endif %}
 
-            <h1 class="h3 mb-3 font-weight-normal">Page de connexion</h1>
-            <label for="inputUsername">Identifiant</label>
-            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
-            <br><br>
-            <label for="inputPassword">Mot de passe</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-            <br><br>
-            <input type="hidden" name="_csrf_token"
-                   value="{{ csrf_token('authenticate') }}"
-            >
+            <div class="loginUn">
+                <h1 class="h3 mb-3 font-weight-normal">Page de connexion</h1>
+                <div class="loginDeux">
+                    <div>
+                        <label for="inputUsername">Identifiant</label>
+                        <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+                    </div>
+                    <br><br>
+                    <div>
+                        <label for="inputPassword">Mot de passe</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                    </div>
+
+                </div>
+
+                <br><br>
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}">
+                <a href="{{ path('app_reset_password') }}">Mot de passe oublié </a>
+                <br><br>
+                <button class="btn btn-lg btn-primary" type="submit">
+                    Se connecter
+                </button>
+                <br><br>
+                <a href="{{ path('app_register') }}">s'inscrire</a>
+            </div>
+
 
             {#
             Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -40,13 +57,7 @@
                 </label>
             </div>
             #}
-            <a href="{{ path('app_reset_password') }}">Mot de passe oublié </a>
-            <br><br>
-            <button class="btn btn-lg btn-primary" type="submit">
-                Se connecter
-            </button>
-            <br><br>
-            <a href="{{ path('app_register') }}">s'inscrire</a>
+
         </form>
     </div>
 {% endblock %}

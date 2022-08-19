@@ -15,8 +15,6 @@ class AccueilController extends AbstractController
     {
         $accueil = new TabFiltre();
         $accueilForm = $this->createForm(AcceuilType::class, $accueil);
-        return $this->render('Accueil/accueil.html.twig', [
-            'accueilForm' => $accueilForm->createView()
-        ]);
+        return $this->render('accueil.html.twig');
     }
 }
