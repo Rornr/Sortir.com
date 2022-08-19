@@ -47,27 +47,25 @@
         </fieldset>
     </div>
     <div id="sortie">
-        <div class="colone1"><h4>Nom de la sortie Sortie</h4></div>
+        <div class="colone1"><h4>Nom de la sortie </h4></div>
         <div class="colone2"><h4>Date de la sortie</h4></div>
         <div class="colone3"><h4>Clôture </h4></div>
         <div class="colone4"><h4>Inscription </h4></div>
-        <div class="colone5"><h4>places</h4></div>
-        <div class="colone6"><h4>Etat</h4></div>
-        <div class="colone7"><h4>Inscrit</h4></div>
-        <div class="colone8"><h4>Organisateur</h4></div>
-        <div class="colone9"><h4>Action</h4></div>
-        <div class="colone10"></div>
+        <div class="colone5"><h4>Etats</h4></div>
+        <div class="colone6"><h4>Inscrit</h4></div>
+        <div class="colone7"><h4>Organisateur</h4></div>
+        <div class="colone8"><h4>Actions</h4></div>
+
         {% for sortie in sorties %}
-            <div class="colone1">{{ sortie.place }}</div>
-            <div class="colone2">{{ sortie.etats }}</div>
-            <div class="colone3">{{ sortie.inscrit }}</div>
-            <div class="colone4">{{ sortie.organisateur }}</div>
-            <div class="colone5">{{ sortie.actions }}</div>
-            <div class="colone6">{{ sortie.actions }}</div>
-            <div class="colone7"></div>
-            <div class="colone8"></div>
-            <div class="colone9"></div>
-            <div class="colone10"></div>
+            <div class="colone1">{{ sortie.nomdelasortie }}</div>
+        {#    <div class="colone2">{{ sortie.dateLaSortie }}</div> #}
+        {#    <div class="colone3">{{ sortie.cloture }}</div> #}
+            <div class="colone4">{{ sortie.inscrits }}</div>
+            <div class="colone5">{{ sortie.etats }} </div>
+            <div class="colone6">{{ sortie.inscrit }}</div>
+            <div class="colone7">{{ sortie.organisateur }}</div>
+            <div class="colone8">{{ sortie.actions }}</div>
+
         {% endfor %}
     </div>
     <form action="{{ path('app_creer_sortie') }}">
